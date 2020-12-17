@@ -1,0 +1,26 @@
+{
+    "Sheet1": [
+        {
+            "Rule Name": "Rule1",
+            "Type of Records": "Travel",
+            "Name of Vendors": "Vendor1",
+            "Amount": "<2000",
+            "Approvers": "A1, A2"
+        },
+        {
+            "Rule Name": "Rule2",
+            "Type of Records": "Non-Travel",
+            "Name of Vendors": "Vendor1",
+            "Amount": "<500",
+            "Approvers": "A3"
+        },
+        {
+            "Rule Name": "Rule3",
+            "Type of Records": "Other",
+            "Name of Vendors": "Vendor1",
+            "Amount": "<10000",
+            "Approvers": "EscA1"
+        }
+    ]
+}
+   

@@ -1,0 +1,20 @@
+<!-- Upload file -->
+ <div class="leftspace">
+    <div>
+        <p><b>Trasactional Data:</b></p>
+        <input type="file" (change)="onFileChange($event,'DATA')" />
+    </div>
+    <div>
+        <p><b>Rules:</b></p>
+        <input type="file" (change)="onFileChange($event,'RULES')" />
+    </div>
+    <div>
+        <p><b>Approvers:</b></p>
+        <input type="file" (change)="onFileChange($event,'APPROVERS')" />
+    </div>
+
+    <div class="leftspace">
+        <p class="boxed" (click)="NextPage()">Next</p>
+    </div>
+</div>
+<!-- <div id="output"></div> -->

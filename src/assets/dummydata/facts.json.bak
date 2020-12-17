@@ -1,0 +1,305 @@
+{
+    "Travel Rules": [
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "AVendor1",
+            "Type/Name of Customers": "ACustomer1",
+            "Type of Employee": "employee1",
+            "Cost Centers": "cost1",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1000"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "AVendor2",
+            "Type/Name of Customers": "BCustomer2",
+            "Type of Employee": "employee2",
+            "Cost Centers": "cost2",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1250"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "AVendor3",
+            "Type/Name of Customers": "CCustomer3",
+            "Type of Employee": "employee3",
+            "Cost Centers": "cost3",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1500"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "BVendor1",
+            "Type/Name of Customers": "BCustomer4",
+            "Type of Employee": "employee4",
+            "Cost Centers": "cost4",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1750"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "BVendor2",
+            "Type/Name of Customers": "ACustomer5",
+            "Type of Employee": "employee5",
+            "Cost Centers": "cost5",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2000"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "Vendor6",
+            "Type/Name of Customers": "CCustomer6",
+            "Type of Employee": "employee6",
+            "Cost Centers": "cost6",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2250"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "Vendor7",
+            "Type/Name of Customers": "CCustomer7",
+            "Type of Employee": "employee7",
+            "Cost Centers": "cost7",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2500"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "Vendor8",
+            "Type/Name of Customers": "ACustomer8",
+            "Type of Employee": "employee8",
+            "Cost Centers": "cost8",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2750"
+        },
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "Vendor9",
+            "Type/Name of Customers": "BCustomer9",
+            "Type of Employee": "employee9",
+            "Cost Centers": "cost9",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "3000"
+        }
+    ],
+    "Non-Travel Rules": [
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "AVendor1",
+            "Type/Name of Customers": "ACustomer1",
+            "Type of Employee": "employee1",
+            "Cost Centers": "cost1",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1000"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "AVendor2",
+            "Type/Name of Customers": "BCustomer2",
+            "Type of Employee": "employee2",
+            "Cost Centers": "cost2",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1250"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "AVendor3",
+            "Type/Name of Customers": "CCustomer3",
+            "Type of Employee": "employee3",
+            "Cost Centers": "cost3",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1500"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "BVendor1",
+            "Type/Name of Customers": "BCustomer4",
+            "Type of Employee": "employee4",
+            "Cost Centers": "cost4",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1750"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "BVendor2",
+            "Type/Name of Customers": "ACustomer5",
+            "Type of Employee": "employee5",
+            "Cost Centers": "cost5",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2000"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "Vendor6",
+            "Type/Name of Customers": "CCustomer6",
+            "Type of Employee": "employee6",
+            "Cost Centers": "cost6",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2250"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "Vendor7",
+            "Type/Name of Customers": "CCustomer7",
+            "Type of Employee": "employee7",
+            "Cost Centers": "cost7",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2500"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "Vendor8",
+            "Type/Name of Customers": "ACustomer8",
+            "Type of Employee": "employee8",
+            "Cost Centers": "cost8",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2750"
+        },
+        {
+            "ID": "2",
+            "Type of Records": "Non-Travel",
+            "Type/Name of Vendors": "Vendor9",
+            "Type/Name of Customers": "BCustomer9",
+            "Type of Employee": "employee9",
+            "Cost Centers": "cost9",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "3000"
+        }
+    ],
+    "Other Expense Rules": [
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "AVendor1",
+            "Type/Name of Customers": "ACustomer1",
+            "Type of Employee": "employee1",
+            "Cost Centers": "cost1",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1000"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "AVendor2",
+            "Type/Name of Customers": "BCustomer2",
+            "Type of Employee": "employee2",
+            "Cost Centers": "cost2",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1250"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "AVendor3",
+            "Type/Name of Customers": "CCustomer3",
+            "Type of Employee": "employee3",
+            "Cost Centers": "cost3",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1500"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "BVendor1",
+            "Type/Name of Customers": "BCustomer4",
+            "Type of Employee": "employee4",
+            "Cost Centers": "cost4",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1750"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "BVendor2",
+            "Type/Name of Customers": "ACustomer5",
+            "Type of Employee": "employee5",
+            "Cost Centers": "cost5",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2000"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "Vendor6",
+            "Type/Name of Customers": "CCustomer6",
+            "Type of Employee": "employee6",
+            "Cost Centers": "cost6",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2250"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "Vendor7",
+            "Type/Name of Customers": "CCustomer7",
+            "Type of Employee": "employee7",
+            "Cost Centers": "cost7",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2500"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "Vendor8",
+            "Type/Name of Customers": "ACustomer8",
+            "Type of Employee": "employee8",
+            "Cost Centers": "cost8",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "2750"
+        },
+        {
+            "ID": "3",
+            "Type of Records": "Other",
+            "Type/Name of Vendors": "Vendor9",
+            "Type/Name of Customers": "BCustomer9",
+            "Type of Employee": "employee9",
+            "Cost Centers": "cost9",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "3000"
+        }
+    ]
+}

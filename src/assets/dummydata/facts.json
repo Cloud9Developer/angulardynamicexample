@@ -1,0 +1,15 @@
+{
+    "Sheet1": [
+        {
+            "ID": "1",
+            "Type of Records": "Travel",
+            "Type/Name of Vendors": "AVendor1",
+            "Type/Name of Customers": "ACustomer1",
+            "Type of Employee": "employee1",
+            "Cost Centers": "cost1",
+            "Company": "null",
+            "Divisions": "null",
+            "Amount": "1000"
+        }
+    ]
+}

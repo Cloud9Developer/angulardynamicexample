@@ -1,0 +1,168 @@
+.selector:hover{
+    color: black;
+    background-color: lightgray;
+    cursor: pointer
+}
+
+.boxed {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    display: inline-block;
+}
+
+.addrow1 {
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    display: inline-block;
+    background-color: cornflowerblue;
+    color: white;
+}
+.addrow1:hover {
+    background-color: skyblue;
+    color:black;
+    cursor: pointer;
+
+}
+
+.addrow2 {
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    display: inline-block;
+    background-color: green;
+    color: white;
+}
+
+.addrow2:hover {
+    background-color: lime;
+    color:black;
+    cursor: pointer;
+
+}
+
+.custombutton {
+    padding-bottom: 10px;
+}
+
+/* / */
+
+.ruleselector{
+    display: inline-block;
+}
+
+.alternateRows {
+    background-color: rgb(233, 244, 250);
+}
+
+.modalScroll {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.modalsize {
+    max-width: 80% !important;
+    min-width: 40% !important;
+    width: 80% !important;
+
+}
+
+table, tr {
+    table-layout: auto;
+    width: 100%;
+}
+th, td {
+padding: 10px;
+}
+
+.approvecheck{
+    background-color: lightgreen;
+}
+
+.ruleClick:hover{
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.buttons {
+    text-align: center;
+    padding: 25px;
+}
+.cancel {
+    background-color: crimson;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+.submit {
+    background-color: green;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+}
+
+.cancel:hover {
+    color: black;
+    background-color: lightyellow;
+}
+.submit:hover {
+    color: black;
+    background-color: lightblue;
+}
+
+.erule {
+    background-color: white;
+    color: black;
+    width: 100%;
+    border: none;
+}
+
+.nerule {
+    background-color: lightgray;
+    color: black;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+}
+
+.ruletable {
+    background-color: lightgray;
+}
+
+.deletex {
+    color:red;
+    cursor: pointer;
+    display:inline-block
+}
+
+.shrink {
+    white-space:nowrap
+}
+
+table td.key {
+    text-align: right;
+    color: black;
+}
+
+table td.value {
+    text-align: left;
+}
+.inverted{
+    background-color: black;
+    color: white;
+}
+
+.approved {
+    background-color: lightgreen;
+}
+ul {
+    list-style-type:none;
+}
+.admin {
+    background-color: slategrey;
+    color: white;
+}

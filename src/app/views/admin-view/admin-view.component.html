@@ -1,0 +1,204 @@
+<div class="ruleselector">
+    <ul style="list-style-type:none;">
+        <div class="custombutton">
+            <li class="selector boxed" (click)="openModal(null, 'allRules')">All Data</li><br>
+        </div>
+        <div class="custombutton">
+            <li class="selector boxed" (click)="openModal(Profiles, 'ruleProfiles')">Rule Profiles</li><br>
+        </div>
+        <div class="custombutton">
+            <li class="selector boxed" (click)="openModal(Profiles, 'approverProfiles')">Approver Profiles</li><br>
+        </div>
+    </ul>
+</div>
+
+
+
+<!-- Modal: All Rule Profiles -->
+<ng-template #Profiles let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{modalName}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div>
+        <button class="btn btn-outline-dark" style="float: right;" type="button" *ngIf="modalName=='Rule Profiles'" (click)="addProfile(selRuleProfile)">Add Rule</button>
+    </div>
+    <div class="modal-body modalScroll">
+        <table *ngIf="selData[selDataHeadings[0]].length > 0">
+            <tr style="background-color: lightblue;" *ngIf="modalName == 'Approver Profiles'">
+                <td *ngFor="let heading of getHeadings(selData[selDataHeadings[0]][0])"><b>{{heading}}</b></td>
+            </tr>
+            <tbody *ngFor="let item of selData[selDataHeadings[0]]; let i = index" [attr.data-index]="i">
+                <tr class="selector" (click)="openEditModal([selRuleProfile,selApproverProfile], item, i)" [ngClass]="{alternateRows: (i%2!=0)}">
+                    <td *ngFor="let heading of getHeadings(item)">
+                        <b *ngIf="modalName == 'Rule Profiles'">{{heading}}: </b><br>
+                        {{item[heading]}}
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
+</ng-template>
+
+
+
+<!-- Modal: Selected (edit) Rule Profile -->
+<ng-template #selRuleProfile let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title" *ngIf="currOpenModal != 'addProfile'">Modify/Delete Rule</h4>
+        <h4 class="modal-title" id="modal-basic-title" *ngIf="currOpenModal == 'addProfile'">Add Rule</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+        <div class="modal-body">
+            <div class="buttons" *ngIf="currOpenModal != 'addProfile'">
+                <button type="button" class="btn btn-outline-dark cancel" (click)="delRule(selItem);modal.close('Del click')">Delete</button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+                <button type="button" class="btn btn-outline-dark submit" (click)="saveRule(selItem);modal.close('Save click')">Save</button>
+            </div>
+            <div class="buttons" *ngIf="currOpenModal == 'addProfile'">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Cancel click')">Cancel</button>
+                <button type="button" class="btn btn-outline-dark submit" (click)="saveRule('new')">Create</button>
+            </div>
+    
+            <div class="ruletable">
+
+                <div>
+                    <!-- Testing -->
+                    <table>
+                        <tr *ngFor="let heading of getHeadings(selItem['item']); let i = index" [attr.data-index]="i">
+                            <!-- <div *ngIf="heading == 'Rule Name' || heading == 'Approval Level'"> -->
+                            <div *ngIf="headingIsStatic(heading)">
+                                <td class="key">
+                                    <input name="key" type="text" class="nerule" [value]="heading"  [disabled]="true" />
+                                </td>
+                                <td class="value">
+                                    <input name="value" type="text" class="erule" [value]="selItem['item'][heading]" *ngIf="heading == 'Rule Name'" />
+                                    <!-- <input name="value" type="text" class="erule" [value]="selItem['item'][heading]" *ngIf="heading != Approval Level"/> -->
+                                    <button name="ApprovalLevelModalOpen" *ngIf="heading != 'Rule Name'">Set Approval Levels</button>
+                                </td>
+                            </div>
+                        </tr>
+                        <button type="button" class="addrow1" (click)="addRowToModal('addApprRowToTable')">+</button>
+                    </table>
+                        <!-- End Testing -->
+                </div>
+
+                <hr>
+
+                <div>
+                    <table id="ruleModifyTable">
+                        <div>
+                            <tr>
+                                <td style="width: 1%;"></td>
+                                <td style="width: 2%;"><b>Key</b></td>
+                                <td style="width: 2%;"><b>Value</b></td>
+                            </tr>
+                            
+                        </div>
+                        
+                        
+                        <tr *ngFor="let heading of getHeadings(selItem['item']); let i = index" [attr.data-index]="i" id="ne{{i}}">
+                            <div *ngIf="!headingIsStatic(heading)" id="test_{{i}}">
+                                <td><p class="deletex shrink" (click)="deleteRow('ne' + i)">X</p></td>
+                                <td class="key">
+                                    <input name="key" type="text" class="erule" [value]="heading" />
+                                </td>
+                                <td class="value">
+                                    <input name="value" type="text" class="erule" [value]="selItem['item'][heading]" />
+                                </td>
+                            </div>
+                        </tr>
+                    
+                        <p class="addrow2" (click)="addRowToModal('addRowToTable')">Add row</p>
+                    </table>
+                </div>
+            </div>
+        </div>
+</ng-template>
+
+
+
+<!-- Modal: Modify Rule: Approver Levels -->
+<ng-template #approvalLevels let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add/Modify/Delete Approver</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!-- <form #roleForm="ngForm"> -->
+        <div class="modal-body">
+            <div class="buttons">
+                <button type="button" class="btn btn-outline-dark cancel" (click)="delApprover(selItem);modal.close('Del click')">Delete</button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+                <button type="button" class="btn btn-outline-dark submit" (click)="saveApprover(selItem);modal.close('Save click')">Save</button>
+            </div>
+    
+            <div class="ruletable">
+                    <table id="ruleModifyTable">
+                        <tr>
+                            <td><b>Key</b></td>
+                            <td><b>Value</b></td>
+                        </tr>
+                        <tr *ngFor="let heading of getHeadings(selItem['item']); let i = index" [attr.data-index]="i">
+                            <td class="key" style="text-align: right;">
+                                <input name="key" type="text" class="nerule" [value]="heading" [disabled]="true" required/>
+                            </td>
+                            <td class="value">
+                                <input name="value" type="text" class="erule" [value]="selItem['item'][heading]"  required/>
+                            </td>
+                        </tr>
+                        <div class="addRowToTable" id="addRowToTable">
+                        </div>
+                        <!-- <p class="addrow" (click)="addRowToModal()">Add row</p> -->
+                    </table>
+            </div>
+        </div>
+    <!-- </form> -->
+</ng-template>
+
+
+
+<!-- Modal: Selected (edit) Approver Profile -->
+<ng-template #selApproverProfile let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add/Modify/Delete Approver</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!-- <form #roleForm="ngForm"> -->
+        <div class="modal-body">
+            <div class="buttons">
+                <button type="button" class="btn btn-outline-dark cancel" (click)="delApprover(selItem);modal.close('Del click')">Delete</button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+                <button type="button" class="btn btn-outline-dark submit" (click)="saveApprover(selItem);modal.close('Save click')">Save</button>
+            </div>
+    
+            <div class="ruletable">
+                    <table id="ruleModifyTable">
+                        <tr>
+                            <td><b>Key</b></td>
+                            <td><b>Value</b></td>
+                        </tr>
+                        <tr *ngFor="let heading of getHeadings(selItem['item']); let i = index" [attr.data-index]="i">
+                            <td class="key" style="text-align: right;">
+                                <input name="key" type="text" class="nerule" [value]="heading" [disabled]="true" required/>
+                            </td>
+                            <td class="value">
+                                <input name="value" type="text" class="erule" [value]="selItem['item'][heading]"  required/>
+                            </td>
+                        </tr>
+                        <div class="addRowToTable" id="addRowToTable">
+                        </div>
+                        <!-- <p class="addrow" (click)="addRowToModal()">Add row</p> -->
+                    </table>
+            </div>
+        </div>
+    <!-- </form> -->
+</ng-template>

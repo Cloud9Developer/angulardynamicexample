@@ -1,0 +1,35 @@
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 800;
+    font-size: large;
+    padding-left: 20px;
+}
+
+.htext:hover {
+    cursor: default;
+}
+
+.boxed {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* .logout {
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+} */
+
+.logout:hover{
+    cursor: pointer;
+}

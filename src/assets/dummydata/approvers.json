@@ -1,0 +1,59 @@
+{
+    "Approvers": [
+        {
+            "Approver Name": "Approver1",
+            "Approver Email ID": "approver1@test.org",
+            "Approver Phone": "555555555",
+            "Approver Business Unit/Division": "BU1",
+            "Approver Manager": "EscApprover5",
+            "Approver Department": "Dept1",
+            "Rules ID": "1,2",
+            "Delegation": "FALSE",
+            "Escalation": "FALSE"
+        },
+        {
+            "Approver Name": "Approver2",
+            "Approver Email ID": "approver2@test.org",
+            "Approver Phone": "555555555",
+            "Approver Business Unit/Division": "BU1",
+            "Approver Manager": "EscApprover5",
+            "Approver Department": "Dept1",
+            "Rules ID": "2,3",
+            "Delegation": "FALSE",
+            "Escalation": "FALSE"
+        },
+        {
+            "Approver Name": "Approver3",
+            "Approver Email ID": "approver3@test.org",
+            "Approver Phone": "555555555",
+            "Approver Business Unit/Division": "BU1",
+            "Approver Manager": "EscApprover5",
+            "Approver Department": "Dept1",
+            "Rules ID": "3,1",
+            "Delegation": "FALSE",
+            "Escalation": "FALSE"
+        },
+        {
+            "Approver Name": "DelApprover4",
+            "Approver Email ID": "delapprover4@test.org",
+            "Approver Phone": "555555555",
+            "Approver Business Unit/Division": "BU1",
+            "Approver Manager": "EscApprover5",
+            "Approver Department": "Dept1",
+            "Rules ID": "1,2,3",
+            "Delegation": "TRUE",
+            "Escalation": "FALSE"
+        },
+        {
+            "Approver Name": "EscApprover5",
+            "Approver Email ID": "escapprover5@test.org",
+            "Approver Phone": "555555555",
+            "Approver Business Unit/Division": "BU1",
+            "Approver Manager": "Approver6",
+            "Approver Department": "Dept1",
+            "Rules ID": "*",
+            "Delegation": "FALSE",
+            "Escalation": "TRUE"
+        }
+    ]
+}

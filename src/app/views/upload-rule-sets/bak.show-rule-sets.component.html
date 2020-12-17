@@ -1,0 +1,41 @@
+<div class="ruleselector">
+    <ul *ngFor="let rule of rules" style="list-style-type:none;">
+        <li class="selector boxed" (click)="openModal(selectedRule,rule)">{{rule}}</li>
+    </ul>
+</div>
+
+
+
+
+<ng-template #selectedRule let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{currSelRule}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body modal-lg">
+        <table>
+                <tr style="background-color: lightblue;">
+                    <td *ngFor="let heading of getHeadings()"><b>{{heading}}</b></td>
+                    <td><b>Approve/Deny</b></td>
+                </tr>
+                <tbody *ngFor="let item of facts[currSelRule]">
+                    <tr>
+                        <td *ngFor="let heading of getHeadings()">{{item[heading]}}</td>
+                        <td>
+                            <select name="approve/deny">
+                                <option value="Approve" style="background-color: greenyellow;">Approve</option>
+                                <option value="Deny" style="background-color: lightcoral;">Deny</option>
+                                <option value="Approve" selected="selected"></option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark cancel" (click)="modal.close('Save click')" [disabled]="!checkAuth()">Cancel</button>
+      <button type="button" class="btn btn-outline-dark submit" (click)="modal.close('Save click');submitApproval()" [disabled]="!checkAuth()">Submit</button>
+    </div>
+  </ng-template>

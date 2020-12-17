@@ -1,0 +1,35 @@
+
+{
+    "Travel" : [
+        {
+            "key" : "Type of Records",
+            "op" : "==",
+            "value" : "Travel",
+            "Approvers" : "Approver1,Approver3"
+        },
+        {
+            "key" : "Amount",
+            "op" : "<=",
+            "value" : "2000"
+        },
+        {
+            "key" : "Type/Name of Vendors",
+            "op" : "==",
+            "value" : "Avendor"
+        }
+    ],
+    "NonTravel" : [
+        {
+            "key" : "Type of Records",
+            "op" : "==",
+            "value" : "Non-Travel"
+        }
+    ],
+    "Other" : [
+        {
+            "key" : "Type of Records",
+            "op" : "==",
+            "value" : "Other"
+        }
+    ]
+}

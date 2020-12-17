@@ -1,0 +1,52 @@
+.ruleselector{
+    display: inline-block;
+}
+.selector:hover{
+    color: black;
+    background-color: lightgray;
+    cursor: pointer
+}
+
+.modalsize {
+    max-width: 80% !important;
+    min-width: 40% !important;
+    width: 80% !important;
+
+}
+
+table, tr {
+    table-layout: auto;
+    border: 2px solid black;
+    text-align: center;
+}
+th, td {
+padding: 10px;
+}
+
+.approvecheck{
+    background-color: lightgreen;
+}
+
+.cancel:hover {
+    color: white;
+    background-color: crimson;
+}
+.submit:hover {
+    color: white;
+    background-color: green;
+}
+
+.boxed {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+.boxed:hover {
+    background-color: lightgray;
+}
+.leftspace{
+    padding-left: 5%;
+}

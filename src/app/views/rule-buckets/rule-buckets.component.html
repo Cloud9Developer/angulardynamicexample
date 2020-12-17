@@ -1,0 +1,89 @@
+<div *ngIf="rules.length == 0">No Rules Available</div>
+
+
+
+<div class="ruleselector">
+  <div *ngIf="currUser['Approver Name'] == 'admin'">
+    <ul>
+      <li class="selector boxed admin" (click)="router.navigate(['/admin'])" > &larr; Admin Page</li>
+    </ul>
+  </div>
+
+    <ul *ngFor="let rule of rules; let i = index" [attr.data-index]="i">
+        <li class="selector boxed" (click)="openRulesModal(selectedRule,rule)" *ngIf="this.ruleEngineService.userHasAuth(i) && facts[rule].length > 0">{{rule}}</li>
+    </ul>
+</div>
+
+
+<!-- Modal 1: select the rule for further approval -->
+<ng-template #selectedRule let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{currSelRule}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body modalScroll">
+        <table>
+            <tr style="background-color: lightblue;">
+              <!-- <div style="display: inline"> -->
+                <td *ngFor="let heading of getHeadings(facts[currSelRule][0])">
+                  <div style="display: inline" *ngIf="heading != 'Approved By'">
+                    <b>{{heading}}</b>
+                  </div>
+                </td>
+              <!-- </div> -->
+            </tr>
+            <tbody *ngFor="let item of facts[currSelRule]; let i = index" [attr.data-index]="i" [ngClass]="{approved: item['Status']=='Approved', denied: item['Status']=='Denied'}">
+                <tr class="selector" (click)="openApproveModal(selectedSubRule, item, i)">
+                  <td *ngFor="let heading of getHeadings(facts[currSelRule][0])"> 
+                    <div style="display: inline" *ngIf="heading != 'Approved By'">{{item[heading]}}</div>
+                  </td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+  </ng-template>
+
+<!-- modal 2: see modal data in format and submit for approval -->
+  <ng-template #selectedSubRule let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{currSelRule}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="buttons">
+        <button type="button" class="btn btn-outline-dark cancel" (click)="submitApproval(getHeadings(facts[currSelRule][0]), false);modal.close('Save click')">Deny</button>
+        <button type="button" class="btn btn-outline-dark" (click)="submitApproval(getHeadings(facts[currSelRule][0]), 'save');modal.close('Save click')">Save</button>
+        <button type="button" class="btn btn-outline-dark submit" (click)="submitApproval(getHeadings(facts[currSelRule][0]), true);modal.close('Save click')">Approve</button>
+      </div>
+
+      <div class="facttable">
+        <table>
+          <tr *ngFor="let heading of getHeadings(facts[currSelRule][0])">
+            <td class="shrink"><b>{{heading}}</b></td>
+            <!-- <td class="expand"><p class="fact">{{selectedFact[heading]}}</p></td> -->
+            <td class="expand">
+              <input name="ufact" type="text" class="nefact" [disabled]="true" value="{{selectedFact[heading]}}" *ngIf="heading!='Invoice Total'"/>
+              <input name="ufact" type="text" class="efact" [disabled]="false" value="{{selectedFact[heading]}}" *ngIf="heading=='Invoice Total'"/>
+            </td>
+
+          </tr>
+        </table>
+        <table>
+          <tr class="inverted">
+            <td>S.No</td><td>Item Description</td><td>Item Amount</td> <td>GL Code</td><td>Project Code</td><td>Cost Center</td>
+          </tr>
+        </table>
+      </div>
+      
+        
+    </div>
+
+    <div class="modal-footer">
+      
+    </div>
+  </ng-template>

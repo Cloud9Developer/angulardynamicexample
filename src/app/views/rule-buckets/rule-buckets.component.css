@@ -1,0 +1,113 @@
+.ruleselector{
+    display: inline-block;
+}
+.selector:hover{
+    color: black;
+    background-color: lightgray;
+    cursor: pointer
+}
+.modalScroll {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.modalsize {
+    max-width: 80% !important;
+    min-width: 40% !important;
+    width: 80% !important;
+
+}
+
+table, tr {
+    table-layout: auto;
+    width: 100%;
+}
+th, td {
+padding: 10px;
+}
+
+.approvecheck{
+    background-color: lightgreen;
+}
+
+.ruleClick:hover{
+    background-color: skyblue;
+    cursor: pointer;
+}
+
+.buttons {
+    text-align: center;
+    padding: 25px;
+}
+.cancel {
+    background-color: crimson;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+.submit {
+    background-color: green;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+}
+
+.cancel:hover {
+    color: black;
+    background-color: lightyellow;
+}
+.submit:hover {
+    color: black;
+    background-color: lightblue;
+}
+
+.boxed {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+}
+
+.nefact {
+    background-color: white;
+    color: darkgray;
+    width: 100%;
+    border: none;
+}
+
+.efact {
+    background-color: white;
+    color: black;
+    width: 100%;
+    border: none;
+}
+
+.facttable {
+    background-color: lightgray;
+}
+
+table td.shrink {
+    white-space:nowrap
+}
+table td.expand {
+    width: 99%
+}
+.inverted{
+    background-color: black;
+    color: white;
+}
+
+.approved {
+    background-color: lightgreen;
+}
+.denied {
+    background-color: lightcoral;
+}
+
+ul {
+    list-style-type:none;
+}
+.admin {
+    background-color: slategrey;
+    color: white;
+}
